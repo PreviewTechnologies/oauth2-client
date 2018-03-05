@@ -121,7 +121,7 @@ if (!isset($_GET['code'])) {
         // to Psr\Http\Message\RequestInterface.
         $request = $provider->getAuthenticatedRequest(
             'GET',
-            'https://www.previewtechsapis.com/identity/v1/user-info',
+            'https://myaccount.previewtechs.com/api/v1/identity/user-info',
             $accessToken
         );
 
@@ -142,7 +142,7 @@ if (!isset($_GET['code'])) {
 
 ## Contributing
 
-Please see [CONTRIBUTING](https://github.com/previewtechnologies/oauth2-client) for details.
+Please see [CONTRIBUTING page](https://github.com/previewtechnologies/oauth2-client) for details.
 
 
 ## Credits
