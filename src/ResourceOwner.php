@@ -23,22 +23,12 @@ class ResourceOwner implements ResourceOwnerInterface
     protected $response;
 
     /**
-     * @var array|mixed
-     */
-    protected $data = [];
-
-
-    /**
      * ResourceOwner constructor.
      * @param array $response
      */
     public function __construct(array $response = array())
     {
         $this->response = $response;
-
-        if (array_key_exists('data', $this->response)) {
-            $this->data = $this->response['data'];
-        }
     }
 
 
@@ -47,7 +37,7 @@ class ResourceOwner implements ResourceOwnerInterface
      */
     public function getId()
     {
-        return $this->data['id'] ?: null;
+        return $this->response['id'] ?: null;
     }
 
     /**
@@ -55,7 +45,7 @@ class ResourceOwner implements ResourceOwnerInterface
      */
     public function getEmail()
     {
-        return $this->data['email_address'] ?: null;
+        return $this->response['email_address'] ?: null;
     }
 
     /**
@@ -63,7 +53,7 @@ class ResourceOwner implements ResourceOwnerInterface
      */
     public function getFirstName()
     {
-        return $this->data['profile']['first_name'] ?: null;
+        return $this->response['profile']['first_name'] ?: null;
     }
 
     /**
@@ -71,7 +61,7 @@ class ResourceOwner implements ResourceOwnerInterface
      */
     public function getLastName()
     {
-        return $this->data['profile']['last_name'] ?: null;
+        return $this->response['profile']['last_name'] ?: null;
     }
 
     /**
@@ -79,7 +69,7 @@ class ResourceOwner implements ResourceOwnerInterface
      */
     public function getFullName()
     {
-        return $this->data['profile']['full_name'] ?: null;
+        return $this->response['profile']['full_name'] ?: null;
     }
 
     /**
@@ -87,7 +77,7 @@ class ResourceOwner implements ResourceOwnerInterface
      */
     public function getPicture()
     {
-        return $this->data['profile']['picture'] ?: null;
+        return $this->response['profile']['picture'] ?: null;
     }
 
     /**
@@ -95,7 +85,7 @@ class ResourceOwner implements ResourceOwnerInterface
      */
     public function getGender()
     {
-        return $this->data['profile']['gender'] ?: null;
+        return $this->response['profile']['gender'] ?: null;
     }
 
     /**

@@ -36,7 +36,7 @@ class Provider extends AbstractProvider
     /**
      * @var string
      */
-    private $urlResourceOwnerDetails = "https://myaccount.previewtechs.com/api/v1/identity/user-info";
+    private $urlResourceOwnerDetails = "https://api.previewtechs.com/me/v1/me";
 
     /**
      * @var string
@@ -218,6 +218,15 @@ class Provider extends AbstractProvider
             $code = $this->responseCode ? $data[$this->responseCode] : 0;
             throw new IdentityProviderException($error, $code, $data);
         }
+    }
+
+    /**
+     * @param AccessToken $token
+     * @return \League\OAuth2\Client\Provider\ResourceOwnerInterface|ResourceOwner
+     */
+    public function getResourceOwner(AccessToken $token)
+    {
+        return parent::getResourceOwner($token);
     }
 
     /**
