@@ -36,7 +36,7 @@ class Provider extends AbstractProvider
     /**
      * @var string
      */
-    private $urlResourceOwnerDetails = "https://www.previewtechsapis.com/identity/v1/user-info";
+    private $urlResourceOwnerDetails = "https://api.previewtechs.com/me/v1/me";
 
     /**
      * @var string
@@ -221,12 +221,21 @@ class Provider extends AbstractProvider
     }
 
     /**
+     * @param AccessToken $token
+     * @return \League\OAuth2\Client\Provider\ResourceOwnerInterface|ResourceOwner
+     */
+    public function getResourceOwner(AccessToken $token)
+    {
+        return parent::getResourceOwner($token);
+    }
+
+    /**
      * @param array $response
      * @param AccessToken $token
      * @return ResourceOwner
      */
     protected function createResourceOwner(array $response, AccessToken $token)
     {
-        return new ResourceOwner($response, $this->responseResourceOwnerId);
+        return new ResourceOwner($response);
     }
 }
