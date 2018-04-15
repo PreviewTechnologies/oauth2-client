@@ -33,7 +33,7 @@ $provider = new \Previewtechs\Oauth2\Client\Provider([
 
 For further usage of this package please refer to the [core package documentation on "Authorization Code Grant"](https://github.com/thephpleague/oauth2-client#usage).
 
-To get a full list of scopes, contact with developers@previewtechs.com. Developer portal is pending development
+To get a full list of scopes, please go to [List of available OAuth2.0 scopes](https://support.previewtechs.com/portal/kb/articles/list-of-available-oauth-2-0-scopes)
 
 ### Refreshing a Token
 
